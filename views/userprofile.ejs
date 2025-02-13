@@ -1,0 +1,202 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
+  </head>
+  <body>
+    
+    <div class="min-h-screen bg-black text-white flex">
+  
+      <div class="w-1/5 p-8 border-r border-zinc-700 fixed">
+        <div class="mb-8">
+          <a href="/feed"><img src="/images/instalogo.png" alt="Instagram Logo" class="mb-8 h-12 w-12"></a>
+          <nav class="space-y-4">
+            <a href="/feed" class="flex items-center space-x-2">
+              <img src="/images/home-5-line.png" alt="Home Icon" aria-hidden="true">
+              <span>Home</span>
+            </a>
+            <a href="/search" class="flex items-center space-x-2">
+              <img src="/images/search.png" alt="Search Icon" class="h-6" aria-hidden="true">
+              <span>Search</span>
+            </a>
+            <a href="https://www.instagram.com/explore/" class="flex items-center space-x-2">
+              <img src="/images/compass-line.png" alt="Explore Icon" aria-hidden="true">
+              <span>Explore</span>
+            </a>
+            <a href="/uploadpost" class="flex items-center space-x-2">
+              <img src="/images/camera-line.png" alt="Reels Icon" aria-hidden="true">
+              <span>Create</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2">
+              <img src="/images/heart-line.png" alt="Notifications Icon" aria-hidden="true">
+              <span>Notifications</span>
+            </a>
+            <a href="/profile" class="flex items-center space-x-4">
+              <img src="/images/uploads/<%=user.ProfileImage%>" alt="Profile Icon" class="h-6 object-contain justify-center" aria-hidden="true">
+              <span>Profile</span>
+            </a>
+          </nav>
+        </div>
+        <div class="mt-[330px] space-y-4">
+          <a href="https://play.google.com/store/search?q=threads&c=apps" class="flex items-center space-x-2">
+            <img src="/images/threads-line.png" alt="Threads Icon" aria-hidden="true">
+            <span>Threads</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2">
+            <img src="/images/align-justify.png" alt="More Icon" aria-hidden="true">
+            <span>More</span>
+          </a>
+        </div>
+      </div>
+  
+  <div class="flex-1 px-12 py-8 ml-72">
+    <div class="flex items-center space-x-4">
+      <a href="/images/uploads/<%=userprofile.ProfileImage%>"><img src="/images/uploads/<%=userprofile.ProfileImage%>" alt="Profile Picture" class=" rounded-full h-24 w-24  object-contain justify-center"></a>
+      <div>
+        <div class="flex space-x-4 mt-2">
+          <h2 class="text-2xl mr-2"><%= userprofile.username %></h2>         
+          <% const index = user.following.indexOf(userprofile._id) %>
+          <% if(index === -1){ %>
+            <a href="/follow/<%= userprofile._id%>"><button class="bg-zinc-600 text-white hover:bg-zinc-800 px-4 py-2 rounded z-3 edit h-10">Follow</button> </a>
+          <% }else{ %>
+            <a href="/follow/<%= userprofile._id%>"><button class="bg-zinc-800 text-white hover:bg-zinc-600 px-4 py-2 rounded z-3 edit h-10">Following</button> </a>
+          <% }%>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <p class="text-lg"><%= userprofile.posts.length %> posts</p>
+      <p class="text-lg"><%= userprofile.followers.length%> Followers</p>
+      <p class="text-lg"><%= userprofile.following.length%> Following</p>
+      <p class="mt-2"><%= userprofile.fullname %></p>
+      <p><%= userprofile.bio %></p>
+    </div>
+    <div class="mt-8">
+      <div class="border-b border-zinc-700 border-full">
+        <nav class="flex space-x-4">
+          <a href="#" class="py-2 text-white border-b-2 border-white">Posts</a>
+        </nav>
+      </div>
+        <% if(userprofile.posts.length == 0){ %>
+          <div class="flex flex-col items-center mt-32 ">
+            <div class="flex items-center justify-center w-24 h-24 border-2 border-muted rounded-full mb-4">
+              <img class="justify-center object-contain" aria-hidden="true" alt="camera-icon" src="/images/camera-line.png" />
+            </div>
+            <h1 class="text-3xl font-bold mt-4 ">No Posts Yet</h1>
+          </div>
+        </div>
+      <% }else{ %>
+        <div class="grid grid-cols-3 gap-4 mt-4 ">
+          <% userprofile.posts.forEach(function(post){ %>
+            <div class="flex flex-col">
+              <img class="w-full h-64 object-cover" src="/images/uploads/<%= post.image %>" alt="Post 1" />
+              <div class="flex justify-between">
+                <div class="flex flex-col">
+                  <p class="flex flex-col mt-2 ml-2 text-lg font-bold" style="color: lightgray;"><%= post.imageText %></p>
+                  <p class="ml-2"><span class="font-bold">Liked by <%= post.likes.length %> others</span></p>
+                </div>
+              </div>
+            </div>
+          <% }); %>  
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+</body>
+  
+</html>

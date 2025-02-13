@@ -1,0 +1,12 @@
+.edit{
+    background: #363636; 
+    font-weight: 600;
+}
+
+.edit:hover{
+    background: #585555;
+}
+
+.change-photo{
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+*{
+    font-family: 'Gilroy';
+    margin: 0;
+}
+
+.change-photo {
+    cursor: pointer;
+}

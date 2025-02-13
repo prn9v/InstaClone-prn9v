@@ -1,0 +1,292 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
+  </head>
+  <body>
+    <div class="flex bg-black text-white">
+  
+      <div class="w-1/5 p-8 border-r border-zinc-700 fixed">
+        <div class="mb-8">
+          <a href="/feed"><img src="/images/instalogo.png" alt="Instagram Logo" class="mb-8 h-12 w-12"></a>
+          <nav class="space-y-4">
+            <a href="/feed" class="flex items-center space-x-2">
+              <img src="/images/home-5-line.png" alt="Home Icon" aria-hidden="true">
+              <span>Home</span>
+            </a>
+            <a href="/search" class="flex items-center space-x-2">
+              <img src="/images/search.png" alt="Search Icon" class="h-6" aria-hidden="true">
+              <span>Search</span>
+            </a>
+            <a href="https://www.instagram.com/explore/" class="flex items-center space-x-2">
+              <img src="/images/compass-line.png" alt="Explore Icon" aria-hidden="true">
+              <span>Explore</span>
+            </a>
+            <a href="/uploadpost" class="flex items-center space-x-2">
+              <img src="/images/camera-line.png" alt="Reels Icon" aria-hidden="true">
+              <span>Create</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2">
+              <img src="/images/heart-line.png" alt="Notifications Icon" aria-hidden="true">
+              <span>Notifications</span>
+            </a>
+            <a href="/profile" class="flex items-center space-x-4">
+              <img src="/images/uploads/<%=user.ProfileImage%>" alt="Profile Icon" class="h-6 object-contain justify-center " aria-hidden="true">
+              <span>Profile</span>
+            </a>
+          </nav>
+        </div>
+        <div class="mt-[330px] space-y-4">
+          <a href="https://play.google.com/store/search?q=threads&c=apps" class="flex items-center space-x-2">
+            <img src="/images/threads-line.png" alt="Threads Icon" aria-hidden="true">
+            <span>Threads</span>
+          </a>
+          <a href="#" class="flex items-center space-x-2">
+            <img src="/images/align-justify.png" alt="More Icon" aria-hidden="true">
+            <span>More</span>
+          </a>
+        </div>
+      </div>
+  
+  <div class="w-3/5 p-12 ml-72">
+    
+    <div class="flex space-x-4 ">
+        <div class="flex flex-col">
+            <img class="w-16 h-16 rounded-full border-2 border-pink-500 object-contain justify-center" src="/images/p.avif" alt="Story " />
+            <span class="text-zinc-200 text-sm text-center tracking-tighter">sobhan</span>
+        </div>
+        <div class="flex flex-col">
+            <img class="w-16 h-16 rounded-full border-2 border-pink-500 object-contain justify-center" src="/images/profile1.avif" alt="Story " />
+            <span class="text-zinc-200 text-sm text-center tracking-tighter">Elisa</span>
+        </div>
+        <div class="flex flex-col">
+            <img class="w-16 h-16 rounded-full border-2 border-pink-500 object-contain justify-center" src="/images/profile2.avif" alt="Story " />
+            <span class="text-zinc-200 text-sm text-center tracking-tighter">leo</span>
+        </div>
+        <div class="flex flex-col">
+            <img class="w-16 h-16 rounded-full border-2 border-pink-500 object-contain justify-center" src="/images/profile3.avif" alt="Story " />
+            <span class="text-zinc-200 text-sm text-center tracking-tighter">niki</span>
+        </div>
+        <div class="flex flex-col">
+            <img class="w-16 h-16 rounded-full border-2 border-pink-500 object-contain justify-center" src="/images/profile4.avif" alt="Story " />
+            <span class="text-zinc-200 text-sm text-center tracking-tighter">megha</span>
+        </div>
+        <div class="flex flex-col">
+            <img class="w-16 h-16 rounded-full border-2 border-pink-500 object-contain justify-center" src="/images/profile5.avif" alt="Story " />
+            <span class="text-zinc-200 text-sm text-center tracking-tighter">jordan</span>
+        </div>
+        <div class="flex flex-col">
+            <img class="w-16 h-16 rounded-full border-2 border-pink-500 object-contain justify-center" src="/images/profile6.avif" alt="Story " />
+            <span class="text-zinc-200 text-sm text-center tracking-tighter">lexa</span>
+        </div>
+        <div class="flex flex-col">
+            <img class="w-16 h-16 rounded-full border-2 border-pink-500 object-contain justify-center" src="/images/profile7.avif" alt="Story " />
+            <span class="text-zinc-200 text-sm text-center tracking-tighter">sobhan_pvt</span>
+        </div>
+    </div>
+
+<div class="bg-red px-8 py-12 rounded-lg mt-0">
+  <div class="flex items-center space-x-2 mb-4">
+    <img class="w-10 h-10 rounded-full object-contain justify-center" src="/images/profilesalman.jpg" alt="User Profile" />
+    <div>
+      <p class="font-bold">beingsalmankhan</p>
+      <p class="text-muted-foreground text-sm">Original audio • 8h</p>
+    </div>
+  </div>
+  <img class="w-full rounded-lg h-96 w-24 object-contain justify-center" src="/images/salman.jpg" alt="Post Image" />
+  <div class="mt-4">
+    <div class="flex items-center space-x-4">
+      <img aria-hidden="true" alt="like-icon" src="/images/likelogo.png" />
+      <img aria-hidden="true" alt="comment-icon" src="/images/commentlogo.png" />
+      <img aria-hidden="true" alt="share-icon" src="/images/sharelogo.png" />
+    </div>
+    <p class="mt-2"><span class="font-bold">Liked by iamsrk and 1,135,707 others</span></p>
+    <p><span class="font-bold">beingsalmankhan</span> Looking forward to #Eid2025 with team #Sikandar
+
+        #SajidNadiadwala’s #Sikandar
+        Directed by @a.r.murugadoss
+        
+        Releasing in cinemas EID 2025 🎬
+        
+        @rashmika_mandanna
+        @nadiadwalagrandson @wardakhannadiadwala
+        #SikandarEid2025</p>
+    <a href="#" class="text-muted-foreground">View all 14.2K comments</a>
+    <a href="#"><p class="text-muted-foreground">Add a comment...</p></a>
+  </div>
+</div>
+<% people.forEach(function(person){ %>
+    <% person.posts.forEach(function(post){ %>
+      <div class="bg-red px-8 py-12 rounded-lg mt-0">
+        <div class="flex items-center space-x-2 mb-4">
+          <img class="w-10 h-10 rounded-full object-contain justify-center" src="/images/uploads/<%= user.ProfileImage%>" alt="User Profile" />
+          <div>
+            <p class="font-bold"><%= person.username %></p>
+            <p class="text-muted-foreground text-sm">Original audio • 8h</p>
+          </div>
+        </div>
+        <img class="image object-contain justify-center" src="/images/uploads/<%= post.image %>" alt="Post Image" />
+        <div class="mt-4">
+          <div class="flex items-center space-x-4">
+            <a href="/like/<%= post._id %>">
+              <% const userIndex = post.likes.indexOf(person._id) %>
+
+              <% if (userIndex === -1) { %>
+                <img alt="like-icon" src="/images/likelogo.png" />
+              <% } else { %>
+                <img alt="like-icon" src="/images/logoafterlike.png" />
+              <% } %>
+            </a>
+            <img aria-hidden="true" alt="comment-icon" src="/images/commentlogo.png" />
+            <img aria-hidden="true" alt="share-icon" src="/images/sharelogo.png" />
+          </div>
+          <p class="mt-2"><span class="font-bold">Liked by <%= post.likes.length %> others</span></p>
+          <p><span class="font-bold"><%= person.username %></span> <%= post.imageText %></p>
+          <a href="#" class="text-muted-foreground">View all 14.2K comments</a>
+          <a href="#"><p class="text-muted-foreground">Add a comment...</p></a>
+        </div>
+      </div>
+    <% }); %>
+<% }); %>
+</div>
+  
+  <div class="w-1/5 p-4 border-l border-zinc-700">
+    <div class="flex items-center justify-between mb-4">
+      <a href="/profile"><div class="flex items-center space-x-2">
+        <img class="w-10 h-10 rounded-full object-contain justify-center" src="/images/uploads/<%= user.ProfileImage%>" alt="User Profile" />
+        <div>
+          <p class="font-bold"><%= user.username %></p>
+          <p class="text-muted-foreground"><%= user.fullname %></p>
+        </div>
+      </div></a>
+      <a href="/logout" class="text-blue-600">Switch</a>
+    </div>
+    <div class="mb-8 mt-8 flex justify-between">
+      <p class="font-bold">Suggested for you</p>
+      <a href="#" class="text-zinc-400">See All</a>
+    </div>
+    <div class="space-y-4">
+      <% people.forEach(function(person){ %>
+        <% if(person.username !== user.username) { %>
+          <a href="/profile/<%= person.username %>">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <img class="w-10 h-10 rounded-full object-contain justify-center" src="/images/uploads/<%= person.ProfileImage %>" alt="Suggested User 1" />
+                <div>
+                  <p class="font-bold"><%= person.username %></p>
+                  <p class="text-muted-foreground text-sm">Suggested for you</p>
+                </div>
+              </div>
+              <a href="/profile/<%= person.username %>" class="text-blue-600">Follow</a>
+            </div>
+        </a>
+        <% } %>
+      <% }) %>
+    </div>
+  </div>
+</div>
+  </body>
+  <script>
+      document.addEventListener("DOMContentLoaded", function(event) { 
+          var scrollpos = localStorage.getItem('scrollpos');
+          if (scrollpos) window.scrollTo(0, scrollpos);
+      });
+
+      window.onbeforeunload = function(e) {
+          localStorage.setItem('scrollpos', window.scrollY);
+      };
+  </script>
+</html>

@@ -1,0 +1,184 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
+  </head>
+  <body>
+    <div class="min-h-screen bg-black text-white flex">
+        <div class="w-1/5 p-8 border-r border-zinc-700 fixed">
+            <div class="mb-8">
+              <a href="/feed"><img src="/images/instalogo.png" alt="Instagram Logo" class="mb-8 h-12 w-12"></a>
+              <nav class="space-y-4">
+                <a href="/feed" class="flex items-center space-x-2">
+                  <img src="/images/home-5-line.png" alt="Home Icon" aria-hidden="true">
+                  <span>Home</span>
+                </a>
+                <a href="/search" class="flex items-center space-x-2">
+                  <img src="/images/search.png" alt="Search Icon" class="h-6" aria-hidden="true">
+                  <span>Search</span>
+                </a>
+                <a href="https://www.instagram.com/explore/" class="flex items-center space-x-2">
+                  <img src="/images/compass-line.png" alt="Explore Icon" aria-hidden="true">
+                  <span>Explore</span>
+                </a>
+                <a href="/uploadpost" class="flex items-center space-x-2">
+                  <img src="/images/camera-line.png" alt="Reels Icon" aria-hidden="true">
+                  <span>Create</span>
+                </a>
+                <a href="#" class="flex items-center space-x-2">
+                  <img src="/images/heart-line.png" alt="Notifications Icon" aria-hidden="true">
+                  <span>Notifications</span>
+                </a>
+                <a href="/profile" class="flex items-center space-x-4">
+                  <img src="/images/uploads/<%=user.ProfileImage%>" alt="Profile Icon" class="h-6 object-contain justify-center" aria-hidden="true">
+                  <span>Profile</span>
+                </a>
+              </nav>
+            </div>
+            <div class="mt-[330px] space-y-4">
+              <a href="https://play.google.com/store/search?q=threads&c=apps" class="flex items-center space-x-2">
+                <img src="/images/threads-line.png" alt="Threads Icon" aria-hidden="true">
+                <span>Threads</span>
+              </a>
+              <a href="#" class="flex items-center space-x-2">
+                <img src="/images/align-justify.png" alt="More Icon" aria-hidden="true">
+                <span>More</span>
+              </a>
+            </div>
+          </div>
+  <div class="flex flex-col">
+    <div class="mb-4 ml-96">
+      <label for="search" class="block text-xl font-semibold mt-16">Search</label>
+      <div class="flex justify-between relative">
+        <input id="search-bar" type="text" placeholder="Search" class="w-[800px] p-2 pl-4 pr-10 rounded-md bg-input text-foreground border border-border focus:ring-2 focus:ring-ring focus:outline-none mt-4" />
+      </div>
+    </div>
+      <div id="users" class="users ml-96 mt-8 text-white">
+        
+      </div>
+  </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.js" integrity="sha512-vHNHepeQWwAggJlhEk932jRS5sNdn/Nn4F+w4TpXW5dA+04qnd3e7YpfXo6auWhFG6z3FVhmScG4ovtF+qYeZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  const inp = document.querySelector('#search-bar');
+  const usersContainer = document.querySelector('#users');
+
+  inp.addEventListener("input", function() {
+    let clutter = ""; // Move the declaration inside the event listener to reset it on each input
+    axios.get(`/username/${inp.value}`)
+      .then(function(response) { // Corrected data to response for better clarity
+        response.data.forEach(function(elem) {
+          clutter += `<a href="/profile/${elem.username}"><div class="flex items-center justify-between mb-4 text-white rounded-lg border-2 border-zinc-700 px-4 py-4">
+                        <div class="flex items-center">
+                          <img src="/images/uploads/${elem.ProfileImage}" alt="profile picture" class="w-10 h-10 rounded-full mr-4 object-contain justify-center" />
+                          <div>
+                            <span class="font-semibold">${elem.username}</span>
+                            <p class="text-muted-foreground">${elem.fullname}</p>
+                          </div>
+                        </div>
+                      </div></a>`;
+        });
+        usersContainer.innerHTML = clutter; // Update the inner HTML of the #users container
+      })
+      .catch(function(error) {
+        console.error("Error fetching data:", error);
+      });
+  });
+</script>
+
+</html>
