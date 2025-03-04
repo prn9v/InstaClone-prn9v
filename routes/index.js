@@ -9,13 +9,20 @@ const upload = require('./multer');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
-postModel.collection.dropIndex('username_1', function(err, result) {
-  if (err) {
+mongoose.connection.once('open', async function () {
+  try {
+    const indexes = await postModel.collection.indexes();
+    if (indexes.some(idx => idx.name === 'username_1')) {
+      await postModel.collection.dropIndex('username_1');
+      console.log('Index dropped');
+    } else {
+      console.log('Index "username_1" does not exist.');
+    }
+  } catch (err) {
     console.error('Error dropping index:', err);
-  } else {
-    console.log('Index dropped:', result);
   }
 });
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
